@@ -49,6 +49,8 @@ while (pontoJogador < 2 && pontoComputador < 2) {
             Computador jogou: papel 
             Jogador Venceu`)
             pontoJogador++
+        } else if (jogador != 1, 2, 3){
+            alert('Digite apenas um número válido')
         } else {
             alert('Empate')
         }
@@ -60,3 +62,4 @@ if (pontoJogador == 2) {
 } else if (pontoComputador == 2) {
     alert(`Computador Venceu com ${pontoComputador}`)
 }
+
