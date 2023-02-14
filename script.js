@@ -1,44 +1,62 @@
 var computador = parseInt(Math.random() * 3 + 1)
 
-alert(`JOGO DA VELHA
+alert(`JOKENPO
 1 = Pedra
 2 = Papel
 3 = Tesoura`)
 
-var jogador = parseInt(prompt("Digite o número"))
 
-if (jogador) {
-    if (jogador == 1 && computador == 2) {
-        alert(`     
+var pontoJogador = 0
+var pontoComputador = 0
+
+while (pontoJogador < 2 && pontoComputador < 2) {
+
+    var jogador = parseInt(prompt("Digite o número"))
+    if (jogador) {
+        if (jogador == 1 && computador == 2) {
+            alert(`     
             Jogador jogou: Pedra
             Computador jogou: Papel 
             Computador Venceu`)
-    } else if (jogador == 1 && computador == 3) {
-        alert(`     
+            pontoComputador++
+        } else if (jogador == 1 && computador == 3) {
+            alert(`     
             Jogador jogou: Pedra
             Computador jogou: Tesoura 
             Jogador Venceu`)
-    } else if (jogador == 2 && computador == 3) {
-        alert(`     
+            pontoJogador++
+        } else if (jogador == 2 && computador == 3) {
+            alert(`     
             Jogador jogou: Papel
             Computador jogou: Tesoura 
             Computador Venceu`)
-    } else if (jogador == 2 && computador == 1) {
-        alert(`     
+            pontoComputador++
+        } else if (jogador == 2 && computador == 1) {
+            alert(`     
             Jogador jogou: Papel
             Computador jogou: Pedra 
             Jogador Venceu`)
-    } else if (jogador == 3 && computador == 1) {
-        alert(` 
+            pontoJogador++
+        } else if (jogador == 3 && computador == 1) {
+            alert(` 
             Jogador jogou: Tesoura
             Computador jogou: Pedra 
             Computador Venceu`)
-    } else if (jogador == 3 && computador == 2) {
-        alert(` 
+            pontoComputador++
+        } else if (jogador == 3 && computador == 2) {
+            alert(` 
             Jogador jogou: Tesoura
             Computador jogou: papel 
             Jogador Venceu`)
-    } else{
-        alert('Empate')
+            pontoJogador++
+        } else {
+            alert('Empate')
+        }
     }
+}
+
+if (pontoJogador == 2) {
+    alert(`Jogador venceu com ${pontoJogador}`)
+} else if (pontoComputador == 2) {
+    alert(`Computador Venceu com ${pontoComputador}`)
 }
